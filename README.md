@@ -1,3 +1,7 @@
+AWS NGINX SITE:
+
+http://ec2-13-236-195-132.ap-southeast-2.compute.amazonaws.com:8080/
+
 **NGINX on the AWS Cloud**
 
 _ **Deployment Steps** _
