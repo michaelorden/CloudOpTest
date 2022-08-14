@@ -81,106 +81,67 @@ go the AWS Management Console.
 
 1. Check if your EC2 instance was created
 
-![](RackMultipart20220814-1-1ya9xs_html_4280261e643dfe02.png)
-
 Step 3. Create your own VPC.
 
 1. Create VPC in your selected region, example mine is in Sydney
 
-![](RackMultipart20220814-1-1ya9xs_html_cf65f804567e2322.png)
+2. Go the search for VPC, then click Create VPC
 
-1. Go the search for VPC, then click Create VPC
+3. After creating VPC, you have to create a Subnet
 
-![](RackMultipart20220814-1-1ya9xs_html_dec77f0370b89c37.png)
+4. Then create an Internet Gateways.
 
-1. After creating VPC, you have to create a Subnet
-
-![](RackMultipart20220814-1-1ya9xs_html_da3140747266c6ed.png)
-
-1. Then create an Internet Gateways.
-
-![](RackMultipart20220814-1-1ya9xs_html_fb765ee5e78c5887.png)
-
-1. Then attached your new Internet Gateway to the new VPC you created.
-2. Create a Route Table
-
-![](RackMultipart20220814-1-1ya9xs_html_6550c0753e4e4b2e.png)
-
-1. Associate the new route table to your subnet you created.
+5. Then attached your new Internet Gateway to the new VPC you created.
+6. Create a Route Table
+7. Associate the new route table to your subnet you created.
 
 Step 4. Launch an instance to VPC.
 
 1. Go to Instances and click Launch
 
-![](RackMultipart20220814-1-1ya9xs_html_42265738b8034d1e.png)
+2. Click Windows instance
 
-1. Click Windows instance
+3. Click configure tab and choose In the dropdown your Network, new subnet and auto assign IP to enable.
 
-![](RackMultipart20220814-1-1ya9xs_html_f049c4e69cb466d.png)
+4. Review and launch and create a Security Group
 
-1. Click configure tab and choose In the dropdown your Network, new subnet and auto assign IP to enable.
-
-![](RackMultipart20220814-1-1ya9xs_html_c20b644658c8156b.png)
-
-1. Review and launch and create a Security Group
-
-![](RackMultipart20220814-1-1ya9xs_html_142e897b6752e190.png)
-
-1. And Launch your instance
-2. And view instance
-
-![](RackMultipart20220814-1-1ya9xs_html_d736f3c74dbc5f07.png)
+5. And Launch your instance
+6. And view instance
 
 Step 5. Install Docker and install NGINX and start the service
 
 1. Ssh to your EC2 to the public IP, I use putty.
 
-![](RackMultipart20220814-1-1ya9xs_html_43c43a5ce60140db.png)
-
-1. Install docker
+2. Install docker
 
 - Sudo yum update
 
-![](RackMultipart20220814-1-1ya9xs_html_11b702d2fc676ead.png)
+3. > Sudo yum install docker -y
 
-1. \> Sudo yum install docker -y
-
-![](RackMultipart20220814-1-1ya9xs_html_1fa4777e55584f73.png)
-
-1. Check docker status
+4. Check docker status
 
 - Sudo service docker status
 - Sudo service docker start
 
-![](RackMultipart20220814-1-1ya9xs_html_b6088e71e2eeb856.png)
-
-1. Check docker version
+5. Check docker version
 
 - Docker -v
 
-![](RackMultipart20220814-1-1ya9xs_html_c54f53d8e93895af.png)
+6. Then reboot
 
-1. The reboot
+< sudo reboot
 
-\< sudo reboot
-
-![](RackMultipart20220814-1-1ya9xs_html_f665994e89be2114.png)
-
-1. Install nginx
+7. Install nginx
 
 - Amazon-linux-extras install -y nginx1.12
 
-![](RackMultipart20220814-1-1ya9xs_html_634c24a02f18b654.png)
-
-1. Check if your nginx is running on your machine by typing
+8. Check if your nginx is running on your machine by typing
 
 - Curl localhost
 
-![](RackMultipart20220814-1-1ya9xs_html_2392a3e4e09f7262.png)
-
 And you see html!
 
-Example 1. Collecting Nginx error logs from file
+1. Collecting Nginx error logs from file
 
 With the following directive, Nginx will log all messages of "warn" severity or higher to the specified log file.
 
